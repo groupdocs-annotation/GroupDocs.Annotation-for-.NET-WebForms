@@ -1,0 +1,25 @@
+﻿using System;
+using System.Web;
+using System.Web.Routing;
+using System.Web.Http;
+using GroupDocs.Annotation.WebForms.AppDomainGenerator;
+
+namespace GroupDocs.Annotation.WebForms
+{
+    public class Global : HttpApplication
+    {
+        void Application_Start(object sender, EventArgs e)
+        {
+            // Fix required to use several GroupDocs products in one project.
+            // Set GroupDocs products assemblies names           
+            string annotationAssemblyName = "GroupDocs.Annotation.dll";
+            // set GroupDocs.Annotation license
+            DomainGenerator annotationDomainGenerator = new DomainGenerator(annotationAssemblyName, "GroupDocs.Annotation.Common.License.License");
+            annotationDomainGenerator.SetAnnotationLicense(annotationDomainGenerator.CurrentType);
+
+            // Code that runs on application startup
+            GlobalConfiguration.Configure(WebApiConfig.Register);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+        }
+    }
+}
