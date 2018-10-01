@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Annotation for Java Dropwizard</title>
+    <title>Annotation for .NET Web Forms</title>
     <link type="text/css" rel="stylesheet" href="/resources/common/css/font-awesome.min.css" />
     <link type="text/css" rel="stylesheet" href="/resources/common/css/swiper.min.css">
     <link type="text/css" rel="stylesheet" href="/resources/common/css/jquery-ui.min.css" />

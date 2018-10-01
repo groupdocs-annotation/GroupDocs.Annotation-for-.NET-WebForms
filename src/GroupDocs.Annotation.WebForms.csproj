@@ -282,7 +282,6 @@
     <Compile Include="Products\Common\Util\Directory\IDirectoryUtils.cs" />
     <Compile Include="Annotation.aspx.cs">
       <DependentUpon>Annotation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Annotation.aspx.designer.cs">
       <DependentUpon>Annotation.aspx</DependentUpon>
