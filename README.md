@@ -1,5 +1,5 @@
 # GroupDocs.Annotation for .NET Web.Forms Example
-###### version 1.1.0
+###### version 1.2.0
 
 
 ## System Requirements
