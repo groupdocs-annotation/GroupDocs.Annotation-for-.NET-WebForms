@@ -8,10 +8,10 @@ namespace GroupDocs.Annotation.WebForms.Products.Common.Config
     public class GlobalConfiguration
     {
         public ServerConfiguration Server;
-        public ApplicationConfiguration Application;       
+        public ApplicationConfiguration Application;        
         public CommonConfiguration Common;
         public AnnotationConfiguration Annotation;
-
+        
         /// <summary>
         /// Get all configurations
         /// </summary>
@@ -20,7 +20,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Common.Config
             Server = new ServerConfiguration();
             Application = new ApplicationConfiguration();           
             Common = new CommonConfiguration();
-            Annotation = new AnnotationConfiguration();
+            Annotation = new AnnotationConfiguration();           
         }
     }
 }
