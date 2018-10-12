@@ -10,6 +10,6 @@
 namespace GroupDocs.Annotation.WebForms {
     
     
-    public partial class Signature {
+    public partial class Annotation {
     }
 }
