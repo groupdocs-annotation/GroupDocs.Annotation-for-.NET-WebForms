@@ -7,7 +7,8 @@
 <html>
 <head>
     <title>Annotation for .NET Web Forms</title>
-    <link type="text/css" rel="stylesheet" href="/resources/common/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="/resources/common/css/all.min.css">
+    <link type="text/css" rel="stylesheet" href="/resources/common/css/v4-shims.min.css">
     <link type="text/css" rel="stylesheet" href="/resources/common/css/swiper.min.css">
     <link type="text/css" rel="stylesheet" href="/resources/common/css/jquery-ui.min.css" />
     <link type="text/css" rel="stylesheet" href="/resources/common/css/circle-progress.css" />
