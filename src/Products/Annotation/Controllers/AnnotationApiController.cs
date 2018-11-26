@@ -51,7 +51,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
             config.StoragePath = DirectoryUtils.FilesDirectory.GetPath();
             // set directory to store annotted documents
             GlobalConfiguration.Annotation.OutputDirectory = DirectoryUtils.OutputDirectory.GetPath();
-            // initialize total instance for the Image mode
+            // initialize Annotation instance for the Image mode
             AnnotationImageHandler = new AnnotationImageHandler(config);
         }
 
