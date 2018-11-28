@@ -1,6 +1,6 @@
 ![Alt text](https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/banner.png "GroupDocs.Annotation")
 # GroupDocs.Annotation for .NET Web.Forms Example
-###### version 1.8.0
+###### version 1.9.0
 
 
 ## System Requirements
@@ -61,10 +61,9 @@ https://www.youtube.com/watch?v=TVb7GwSNDqw
 2. Extract/Copy GroupDocs.Annotation for .NET Web.Forms Sample to working directory.
 3. Navigate to GroupDocs.Annotation for .NET Web.Forms Sample root directory.
 4. Open solution in the VisualStudio.
-5. Update parameters in `web.config` to meet your requirements.
+5. Update common parameters in `web.config` and example related properties in the 'configuration.yml' to meet your requirements.
 6. Go to `http://localhost:{PORT}/`.
 PORT - port number specified in `web.config` (by default http://localhost:8080).
-
 
 ## Resources
 - **Website:** [www.groupdocs.com](http://www.groupdocs.com)

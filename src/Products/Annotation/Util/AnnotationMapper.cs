@@ -1,5 +1,4 @@
-﻿
-using GroupDocs.Annotation.Domain;
+﻿using GroupDocs.Annotation.Domain;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web;
 using System;
 
@@ -70,7 +69,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Util
                     CommentsEntity comment = new CommentsEntity();
                     AnnotationReplyInfo reply = replies[m];
                     comment.text = reply.Message;
-                    comment.time = reply.RepliedOn.ToString();
+                    comment.time = reply.RepliedOn.ToString("yyyy-MM-dd HH:mm:ss");
                     comment.userName = reply.UserName;
                     comments[m] = comment;
                 }

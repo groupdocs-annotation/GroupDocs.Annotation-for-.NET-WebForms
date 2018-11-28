@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace GroupDocs.Total.WebForms.Products.Common.Util.Comparator
+namespace GroupDocs.Annotation.WebForms.Products.Common.Util.Comparator
 {
     /// <summary>
     /// FileTypeComparator
