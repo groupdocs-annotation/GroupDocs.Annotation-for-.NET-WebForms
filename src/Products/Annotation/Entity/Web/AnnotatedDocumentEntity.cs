@@ -6,5 +6,6 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web
     {
         public string guid;
         public AnnotationDataEntity[] annotations;
+        public string data;
     }
 }

@@ -1,6 +1,6 @@
 ![Alt text](https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/banner.png "GroupDocs.Annotation")
 # GroupDocs.Annotation for .NET Web.Forms Example
-###### version 1.9.0
+###### version 1.10.0
 
 
 ## System Requirements
