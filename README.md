@@ -1,6 +1,7 @@
 ![Alt text](https://raw.githubusercontent.com/groupdocs-annotation/groupdocs-annotation.github.io/master/resources/image/banner.png "GroupDocs.Annotation")
 # GroupDocs.Annotation for .NET Web.Forms Example
 ###### version 1.11.0
+[![Build status](https://ci.appveyor.com/api/projects/status/kit9gu0bq8a660oi/branch/master?svg=true)](https://ci.appveyor.com/project/egorovpavel/groupdocs-annotation-for-net-webforms/branch/master)
 
 
 ## System Requirements
