@@ -1,5 +1,4 @@
 ﻿using GroupDocs.Annotation.Domain;
-using System;
 
 namespace GroupDocs.Annotation.WebForms.Products.Annotation.Util
 {
