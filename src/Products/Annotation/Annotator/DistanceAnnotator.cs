@@ -14,7 +14,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Annotator
 
         public override AnnotationInfo AnnotateWord()
         {
-            throw new NotSupportedException(String.Format(MESSAGE, annotationData.type));
+            throw new NotSupportedException(String.Format(Message, annotationData.type));
         }
 
         public override AnnotationInfo AnnotatePdf()
@@ -25,12 +25,12 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Annotator
 
         public override AnnotationInfo AnnotateCells()
         {
-            throw new NotSupportedException(String.Format(MESSAGE, annotationData.type));
+            throw new NotSupportedException(String.Format(Message, annotationData.type));
         }
 
         public override AnnotationInfo AnnotateSlides()
         {
-            throw new NotSupportedException(String.Format(MESSAGE, annotationData.type));
+            throw new NotSupportedException(String.Format(Message, annotationData.type));
         }
 
         public override AnnotationInfo AnnotateImage()
