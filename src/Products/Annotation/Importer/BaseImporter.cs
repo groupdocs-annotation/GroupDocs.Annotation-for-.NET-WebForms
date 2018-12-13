@@ -7,8 +7,8 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Importer
     public class BaseImporter
     {
         protected FileStream documentStream;
-        protected AnnotationImageHandler annotator;
         protected string password;
+        protected AnnotationImageHandler annotator;
 
         /// <summary>
         /// Constructor
@@ -30,15 +30,17 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Importer
         public AnnotationInfo[] ImportAnnotations(DocumentType docType)
         {
             AnnotationInfo[] annotations = null;
+
             if (docType.Equals(DocumentType.Images))
             {
-                annotations = annotator.ImportAnnotations(documentStream, docType);
+               annotations = annotator.ImportAnnotations(documentStream, docType);
             }
             else
             {
-                annotations = annotator.ImportAnnotations(documentStream, docType, password);
-            }
+               annotations = annotator.ImportAnnotations(documentStream, docType, password);
+            }           
             return annotations;
         }
+
     }
 }

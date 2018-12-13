@@ -5,6 +5,7 @@ using GroupDocs.Annotation.Domain.Image;
 using GroupDocs.Annotation.Domain.Options;
 using GroupDocs.Annotation.Handler;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Annotator;
+using GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Request;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Importer;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Util;
@@ -31,7 +32,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
     {
         private static Common.Config.GlobalConfiguration GlobalConfiguration;
         private List<string> SupportedImageFormats = new List<string>() { ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png", ".gif", ".emf", ".wmf", ".dwg", ".dicom", ".djvu" };
-        private List<string> SupportedAutoCadFormats = new List<string>() { ".dxf", ".dwg" };
+        private List<string> SupportedDiagrammFormats = new List<string>() { ".vsd", ".vdx", ".vss", ".vsx", ".vst", ".vtx", ".vsdx", ".vdw", ".vstx", ".vssx" };
         private static AnnotationImageHandler AnnotationImageHandler;
         private DirectoryUtils DirectoryUtils;
 
@@ -50,7 +51,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
             config.StoragePath = DirectoryUtils.FilesDirectory.GetPath();
             // set directory to store annotted documents
             GlobalConfiguration.Annotation.OutputDirectory = DirectoryUtils.OutputDirectory.GetPath();
-            // initialize total instance for the Image mode
+            // initialize Annotation instance for the Image mode
             AnnotationImageHandler = new AnnotationImageHandler(config);
         }
 
@@ -148,7 +149,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
                 {
                     documentType = "image";
                 }
-                else if (SupportedAutoCadFormats.Contains(fileExtension))
+                else if (SupportedDiagrammFormats.Contains(fileExtension))
                 {
                     documentType = "diagram";
                 }
@@ -167,6 +168,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
                     description.height = pageData.Height;
                     description.width = pageData.Width;
                     description.number = pageData.Number;
+                    description.supportedAnnotations = new SupportedAnnotations().GetSupportedAnnotations(documentType);
                     // set annotations data if document page contains annotations
                     if (annotations != null && annotations.Length > 0)
                     {

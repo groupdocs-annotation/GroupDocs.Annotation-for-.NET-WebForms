@@ -29,7 +29,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Config
         public bool isTextUnderlineAnnotation = true;
         public bool isDistanceAnnotation = true;
         public bool isDownloadOriginal = true;
-        public bool isDownloadAnnotated = true;
+        public bool isDownloadAnnotated = true;     
 
         /// <summary>
         /// Get annotation configuration section from the Web.config
@@ -45,7 +45,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Config
             {
                 FilesDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, FilesDirectory);
                 if (!Directory.Exists(FilesDirectory))
-                {
+                {                   
                     Directory.CreateDirectory(FilesDirectory);
                 }
             }

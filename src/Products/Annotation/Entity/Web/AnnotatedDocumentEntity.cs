@@ -1,4 +1,5 @@
 ﻿using GroupDocs.Annotation.WebForms.Products.Common.Entity.Web;
+using System.Collections.Generic;
 
 namespace GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web
 {
@@ -6,6 +7,6 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web
     {
         public string guid;
         public AnnotationDataEntity[] annotations;
-        public string data;
+        public string[] supportedAnnotations;
     }
 }
