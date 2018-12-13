@@ -1,4 +1,6 @@
-﻿using GroupDocs.Annotation.Domain;
+﻿
+using GroupDocs.Annotation.Domain;
+using GroupDocs.Annotation.Domain.Containers;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web;
 using System;
 
@@ -9,8 +11,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Annotator
     /// </summary>
     public abstract class BaseAnnotator
     {
-        public string Message = "Annotation of type %s for this file type is not supported";
-
+        public string Message = "Annotation of type {0} for this file type is not supported";       
         protected AnnotationDataEntity annotationData;
         protected PageData pageData;
 
