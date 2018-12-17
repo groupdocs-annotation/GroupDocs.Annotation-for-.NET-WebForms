@@ -2,6 +2,7 @@
 # GroupDocs.Annotation for .NET Web.Forms Example
 ###### version 1.15.0
 [![Build status](https://ci.appveyor.com/api/projects/status/kit9gu0bq8a660oi/branch/master?svg=true)](https://ci.appveyor.com/project/egorovpavel/groupdocs-annotation-for-net-webforms/branch/master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1b8d9bdc1eff40adb9b088a4575d8aa5)](https://www.codacy.com/app/egorovpavel/GroupDocs.Annotation-for-.NET-WebForms?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=groupdocs-annotation/GroupDocs.Annotation-for-.NET-WebForms&amp;utm_campaign=Badge_Grade)
 
 
 ## System Requirements
