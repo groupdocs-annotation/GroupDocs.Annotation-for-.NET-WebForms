@@ -1,4 +1,6 @@
-﻿namespace GroupDocs.Annotation.WebForms.Products.Common.Entity.Web
+﻿using System;
+
+namespace GroupDocs.Annotation.WebForms.Products.Common.Entity.Web
 {
     /// <summary>
     /// Exception entity
