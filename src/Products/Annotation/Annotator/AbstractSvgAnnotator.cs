@@ -9,7 +9,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Annotator
     {
         private bool fixTop = false;
 
-        public AbstractSvgAnnotator(AnnotationDataEntity annotationData, PageData pageData)
+        protected AbstractSvgAnnotator(AnnotationDataEntity annotationData, PageData pageData)
             : base(annotationData, pageData)
         {
         }

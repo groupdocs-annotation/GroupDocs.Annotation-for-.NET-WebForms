@@ -20,7 +20,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Common.Config
             Server = new ServerConfiguration();
             Application = new ApplicationConfiguration();
             Common = new CommonConfiguration();
-            Annotation = new AnnotationConfiguration();          
+            Annotation = new AnnotationConfiguration();
         }
     }
 }

@@ -5,7 +5,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Annotator
 {
     public abstract class AbstractTextAnnotator : BaseAnnotator
     {
-        public AbstractTextAnnotator(AnnotationDataEntity annotationData, PageData pageData)
+        protected AbstractTextAnnotator(AnnotationDataEntity annotationData, PageData pageData)
             : base(annotationData, pageData)
         {
         }
