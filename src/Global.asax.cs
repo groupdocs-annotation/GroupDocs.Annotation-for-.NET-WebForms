@@ -15,7 +15,7 @@ namespace GroupDocs.Annotation.WebForms
             string annotationAssemblyName = "GroupDocs.Annotation.dll";
             // set GroupDocs.Annotation license
             DomainGenerator annotationDomainGenerator = new DomainGenerator(annotationAssemblyName, "GroupDocs.Annotation.Common.License.License");
-            annotationDomainGenerator.SetAnnotationLicense(annotationDomainGenerator.CurrentType);
+            annotationDomainGenerator.SetAnnotationLicense();
 
             // Code that runs on application startup
             GlobalConfiguration.Configure(WebApiConfig.Register);

@@ -9,8 +9,8 @@ namespace GroupDocs.Annotation.WebForms.AppDomainGenerator
     /// </summary>
     public class DomainGenerator
     {
-        private Products.Common.Config.GlobalConfiguration globalConfiguration;
-        public Type CurrentType;
+        private readonly Products.Common.Config.GlobalConfiguration globalConfiguration;
+        private readonly Type CurrentType;
 
         /// <summary>
         /// Constructor
@@ -58,19 +58,18 @@ namespace GroupDocs.Annotation.WebForms.AppDomainGenerator
             // Initiate class from the loaded assembly
             Type type = assembly.GetType(className);
             return type;
-        }
+        }      
 
         /// <summary>
         /// Set GroupDocs.Annotation license
-        /// </summary>
-        /// <param name="type">Type</param>
-        public void SetAnnotationLicense(Type type)
+        /// </summary>       
+        public void SetAnnotationLicense()
         {
             // Initiate license class
-            var obj = (GroupDocs.Annotation.Common.License.License)Activator.CreateInstance(type);
+            var obj = (GroupDocs.Annotation.Common.License.License)Activator.CreateInstance(CurrentType);
             // Set license
             SetLicense(obj);
-        }       
+        }        
 
         private void SetLicense(dynamic obj)
         {
