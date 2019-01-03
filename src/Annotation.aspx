@@ -33,24 +33,17 @@
 </head>
 <body>
     <div id="element"></div>
-    <script type="text/javascript">
-        $('#element').viewer({
+    <script type="text/javascript">      
+        $('#element').annotation({
             applicationPath: 'http://<%= config.Server.HostAddress%>:<%= config.Server.HttpPort%>/annotation',
             defaultDocument: '<%= config.Annotation.GetDefaultDocument()%>',
-            htmlMode: false,
             preloadPageCount: <%= config.Annotation.GetPreloadPageCount()%>,
-            zoom : false,
             pageSelector: <%= config.Common.isPageSelector.ToString().ToLowerInvariant()%>,
-            search: false,
-            thumbnails: false,
-            rotate: false,
             download: <%= config.Common.isDownload.ToString().ToLowerInvariant()%>,
             upload: <%= config.Common.isUpload.ToString().ToLowerInvariant()%>,
             print: <%= config.Common.isPrint.ToString().ToLowerInvariant()%>,
             browse: <%= config.Common.isBrowse.ToString().ToLowerInvariant()%>,
-            rewrite: <%= config.Common.isRewrite.ToString().ToLowerInvariant()%>
-            });
-        $('#element').annotation({
+            rewrite: <%= config.Common.isRewrite.ToString().ToLowerInvariant()%>,
             textAnnotation: <%= config.Annotation.GetIsTextAnnotation().ToString().ToLowerInvariant()%>,
             areaAnnotation: <%= config.Annotation.GetIsAreaAnnotation().ToString().ToLowerInvariant()%>,
             pointAnnotation: <%= config.Annotation.GetIsPointAnnotation().ToString().ToLowerInvariant()%>,

@@ -260,7 +260,6 @@
     <Compile Include="Products\Common\Entity\Web\PostedDataEntity.cs" />
     <Compile Include="Products\Common\Entity\Web\UploadedDocumentEntity.cs" />
     <Compile Include="Products\Common\Resources\Resources.cs" />
-    <Compile Include="Products\Common\Entity\Web\DocumentDescriptionEntity.cs" />
     <Compile Include="Products\Common\Util\Comparator\FileNameComparator.cs" />
     <Compile Include="Products\Common\Util\Comparator\FileTypeComparator.cs" />
     <Compile Include="Products\Common\Util\Directory\IDirectoryUtils.cs" />
