@@ -57,7 +57,8 @@
             textUnderlineAnnotation: <%= config.Annotation.GetIsTextUnderlineAnnotation().ToString().ToLowerInvariant()%>,
             distanceAnnotation: <%= config.Annotation.GetIsDistanceAnnotation().ToString().ToLowerInvariant()%>,
             downloadOriginal:  <%= config.Annotation.GetIsDownloadOriginal().ToString().ToLowerInvariant()%>,
-            downloadAnnotated:  <%= config.Annotation.GetIsDownloadAnnotated().ToString().ToLowerInvariant()%>
+            downloadAnnotated:  <%= config.Annotation.GetIsDownloadAnnotated().ToString().ToLowerInvariant()%>,
+            enableRightClick: <%= config.Common.enableRightClick.ToString().ToLowerInvariant()%>
         });
     </script>
 </body>
