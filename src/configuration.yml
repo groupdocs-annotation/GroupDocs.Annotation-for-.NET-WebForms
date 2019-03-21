@@ -16,7 +16,7 @@ server:
 application:
     # License path
     # Absolute path to GroupDocs license file
-    licensePath: 'Licenses/GroupDocs.Annotation.NET.lic'
+    licensePath: 'Licenses/GroupDocs.Total.NET.lic'
 
 ################################################
 # Common configurations
@@ -94,3 +94,8 @@ annotation:
   downloadOriginal: true
   # Enable/disable signed document downloading
   downloadAnnotated: true
+  # Enable/disable zoom
+  zoom: true
+  # Enable/disable fit width
+  # set true to zoom document pages fit width
+  fitWidth: true
