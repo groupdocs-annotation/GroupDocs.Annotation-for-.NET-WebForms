@@ -15,7 +15,10 @@
     <link type="text/css" rel="stylesheet" href="/annotation/resources/viewer/css/viewer.css" />
     <link type="text/css" rel="stylesheet" href="/annotation/resources/viewer/css/viewer.mobile.css" />
     <link type="text/css" rel="stylesheet" href="/annotation/resources/viewer/css/viewer-dark.css" />
+    <link type="text/css" rel="stylesheet" href="/annotation/resources/annotation/css/bcPicker.css" />
+    <link type="text/css" rel="stylesheet" href="/annotation/resources/annotation/css/bcPicker.mobile.css" />
     <link type="text/css" rel="stylesheet" href="/annotation/resources/annotation/css/annotation.css" />
+	<link type="text/css" rel="stylesheet" href="/annotation/resources/annotation/css/annotation.mobile.css" />
     <script type="text/javascript" src="/annotation/resources/common/js/jquery.min.js"></script>
     <script type="text/javascript" src="/annotation/resources/common/js/swiper.min.js"></script>
     <script type="text/javascript" src="/annotation/resources/common/js/jquery-ui.min.js"></script>
@@ -26,6 +29,7 @@
     <script type="text/javascript" src="/annotation/resources/viewer/js/viewer.js"></script>
     <script type="text/javascript" src="/annotation/resources/annotation/js/svg.min.js"></script>
     <script type="text/javascript" src="/annotation/resources/annotation/js/svg.draw.js"></script>
+    <script type="text/javascript" src="/annotation/resources/annotation/js/bcPicker.js"></script>
     <script type="text/javascript" src="/annotation/resources/annotation/js/drawSvgAnnotation.js"></script>
     <script type="text/javascript" src="/annotation/resources/annotation/js/drawTextAnnotation.js"></script>
     <script type="text/javascript" src="/annotation/resources/annotation/js/annotation.js"></script>

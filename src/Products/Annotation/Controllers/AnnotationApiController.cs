@@ -50,7 +50,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
             {
                 // set storage path
                 StoragePath = DirectoryUtils.FilesDirectory.GetPath()
-            };           
+            };
             // initialize Annotation instance for the Image mode
             AnnotationImageHandler = new AnnotationImageHandler(config);
         }
@@ -202,7 +202,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
                 // set exception message
                 return Request.CreateResponse(HttpStatusCode.OK, new Resources().GenerateException(ex, password));
             }
-        }      
+        }
 
         /// <summary>
         /// Get document page
@@ -227,7 +227,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
                     CountPagesToConvert = 1,
                     Password = password
                 };
-                string documentPath = GetDocumentPath(documentGuid);               
+                string documentPath = GetDocumentPath(documentGuid);
                 // get page image
                 byte[] bytes;
                 using (MemoryStream memoryStream = new MemoryStream())
@@ -236,7 +236,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
                     {
                         List<PageImage> images = AnnotationImageHandler.GetPages(document, imageOptions);
                         Stream imageStream = images[pageNumber - 1].Stream;
-                        
+
                         imageStream.Position = 0;
                         imageStream.CopyTo(memoryStream);
                         bytes = memoryStream.ToArray();
@@ -250,7 +250,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
                 loadedPage.SetData(encodedImage);
                 DocumentInfoContainer documentDescription = AnnotationImageHandler.GetDocumentInfo(documentPath, password);
                 loadedPage.height = documentDescription.Pages[pageNumber - 1].Height;
-                loadedPage.width = documentDescription.Pages[pageNumber - 1].Width;                
+                loadedPage.width = documentDescription.Pages[pageNumber - 1].Width;
                 // return loaded page object
                 return Request.CreateResponse(HttpStatusCode.OK, loadedPage);
             }
@@ -272,12 +272,12 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
         public HttpResponseMessage DownloadDocument(string path)
         {
             // prepare response message
-            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);          
-           
+            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+
             // add file into the response
             if (File.Exists(path))
             {
-                
+
                 var fileStream = GetCleanDocumentStream(path);
                 response.Content = new StreamContent(fileStream);
                 response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
@@ -407,7 +407,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
                 else
                 {
                     throw new InvalidDataException("Annotations data are empty");
-                }               
+                }
             }
             catch (System.Exception ex)
             {
@@ -554,8 +554,8 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
                 }
 
                 // Add annotation to the document
-                DocumentType type = DocumentTypesConverter.GetDocumentType(documentType);              
-                RemoveAnnotations(documentGuid);              
+                DocumentType type = DocumentTypesConverter.GetDocumentType(documentType);
+                RemoveAnnotations(documentGuid);
                 // check if annotations array contains at least one annotation to add
                 if (annotations.Count != 0)
                 {
@@ -691,11 +691,11 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
             try
             {
                 Stream resultStream = null;
-               
+
                 using (Stream inputStream = File.Open(path, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite))
                 {
                     resultStream = AnnotationImageHandler.RemoveAnnotationStream(inputStream);
-                    resultStream.Position = 0;                   
+                    resultStream.Position = 0;
                 }
                 return resultStream;
             }
