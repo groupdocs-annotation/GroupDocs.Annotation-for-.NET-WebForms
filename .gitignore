@@ -12,7 +12,7 @@ node_modules
 src/package-lock.json
 /src/node 
 src/DocumentSamples
-!src/DocumentSamples/Editor/.gitkeep
+!src/DocumentSamples/Annotation/.gitkeep
 src/Licenses
 !src/Licenses/.gitkeep
 .DS_Store
