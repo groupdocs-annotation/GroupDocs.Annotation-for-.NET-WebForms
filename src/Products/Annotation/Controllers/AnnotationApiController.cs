@@ -575,10 +575,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
                         fileStream.Close();
                     }
                 }
-                else
-                {
-                    return Request.CreateResponse(HttpStatusCode.OK, new Resources().GenerateException(new NotSupportedException(notSupportedMessage)));
-                }
+
                 annotatedDocument = new AnnotatedDocumentEntity();
                 annotatedDocument.guid = documentGuid;
                 if (annotateDocumentRequest.print)
