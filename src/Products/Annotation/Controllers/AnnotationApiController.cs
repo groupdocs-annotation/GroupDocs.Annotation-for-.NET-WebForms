@@ -5,6 +5,7 @@ using GroupDocs.Annotation.Domain.Image;
 using GroupDocs.Annotation.Domain.Options;
 using GroupDocs.Annotation.Handler;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Annotator;
+using GroupDocs.Annotation.WebForms.Products.Annotation.Config;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Request;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Importer;
@@ -55,6 +56,16 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
             AnnotationImageHandler = new AnnotationImageHandler(config);
         }
 
+        /// <summary>
+        /// Load Annotation configuration
+        /// </summary>
+        /// <returns>Annotation configuration</returns>
+        [HttpGet]
+        [Route("loadConfig")]
+        public AnnotationConfiguration LoadConfig()
+        {
+            return GlobalConfiguration.Annotation;
+        }
 
         /// <summary>
         /// Get all files and directories from storage
