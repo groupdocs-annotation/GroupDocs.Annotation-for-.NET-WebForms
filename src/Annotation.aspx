@@ -6,8 +6,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Annotation for .NET MVC</title>
-    <link rel="icon" type="image/x-icon" href="resources/annotation/favicon.ico" />
+    <title>Annotation for .NET Web Forms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <client-root></client-root>
