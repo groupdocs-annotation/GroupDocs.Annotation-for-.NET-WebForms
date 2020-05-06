@@ -44,8 +44,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GroupDocs.Annotation, Version=19.6.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
-      <HintPath>..\packages\GroupDocs.Annotation.19.6.0\lib\GroupDocs.Annotation.dll</HintPath>
+    <Reference Include="GroupDocs.Annotation, Version=20.4.1.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\GroupDocs.Annotation.20.4.1\lib\net20\GroupDocs.Annotation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -148,8 +148,6 @@
     <Compile Include="AppDomainGenerator\DomainGenerator.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Products\Annotation\Annotator\AbstractBoxAnnotator.cs" />
-    <Compile Include="Products\Annotation\Annotator\AbstractSvgAnnotator.cs" />
     <Compile Include="Products\Annotation\Annotator\AbstractTextAnnotator.cs" />
     <Compile Include="Products\Annotation\Annotator\AnnotatorFactory.cs" />
     <Compile Include="Products\Annotation\Annotator\AreaAnnotator.cs" />
@@ -160,7 +158,7 @@
     <Compile Include="Products\Annotation\Annotator\PolylineAnnotator.cs" />
     <Compile Include="Products\Annotation\Annotator\ResourceRedactionAnnotator.cs" />
     <Compile Include="Products\Annotation\Annotator\TexStrikeoutAnnotator.cs" />
-    <Compile Include="Products\Annotation\Annotator\TextAnnotator.cs" />
+    <Compile Include="Products\Annotation\Annotator\TextHighlightAnnotator.cs" />
     <Compile Include="Products\Annotation\Annotator\TextFieldAnnotator.cs" />
     <Compile Include="Products\Annotation\Annotator\TextRedactionAnnotator.cs" />
     <Compile Include="Products\Annotation\Annotator\TextReplacementAnnotator.cs" />
@@ -176,7 +174,6 @@
     <Compile Include="Products\Annotation\Entity\Web\CommentsEntity.cs" />
     <Compile Include="Products\Annotation\Entity\Web\PageDataDescriptionEntity.cs" />
     <Compile Include="Products\Annotation\Entity\Web\TextRowEntity.cs" />
-    <Compile Include="Products\Annotation\Importer\BaseImporter.cs" />
     <Compile Include="Products\Annotation\Util\AnnotationMapper.cs" />
     <Compile Include="Products\Annotation\Util\Directory\DirectoryUtils.cs" />
     <Compile Include="Products\Annotation\Util\Directory\FilesDirectoryUtils.cs" />

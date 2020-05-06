@@ -1,60 +1,55 @@
-﻿using GroupDocs.Annotation.Domain;
-using GroupDocs.Annotation.Domain.Containers;
+﻿using GroupDocs.Annotation.Models;
+using GroupDocs.Annotation.Models.AnnotationModels;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web;
+using GroupDocs.Annotation.Options;
 using System;
 
 namespace GroupDocs.Annotation.WebForms.Products.Annotation.Annotator
 {
-    public class TexStrikeoutAnnotator : AbstractSvgAnnotator
+    public class TexStrikeoutAnnotator : AbstractTextAnnotator
     {
-        public TexStrikeoutAnnotator(AnnotationDataEntity annotationData, PageData pageData)
-            : base(annotationData, pageData)
+        private StrikeoutAnnotation strikeoutAnnotation;
+
+        public TexStrikeoutAnnotator(AnnotationDataEntity annotationData, PageInfo pageInfo)
+            : base(annotationData, pageInfo)
         {
+            strikeoutAnnotation = new StrikeoutAnnotation
+            {
+                Points = GetPoints(annotationData, pageInfo)
+            };
         }
-        
-        public override AnnotationInfo AnnotateWord()
+
+        public override AnnotationBase AnnotateWord()
         {
-            SetFixTop(true);
-            // init possible types of annotations
-            AnnotationInfo strikeoutAnnotation = InitAnnotationInfo();
-            return strikeoutAnnotation;
-        }
-        
-        public override AnnotationInfo AnnotatePdf()
-        {
-            SetFixTop(false);
-            AnnotationInfo strikeoutAnnotation = InitAnnotationInfo();
-            strikeoutAnnotation.AnnotationPosition = new Point(annotationData.left, annotationData.top);
-            strikeoutAnnotation.PenColor = 0;
-            strikeoutAnnotation.Guid = annotationData.id.ToString();
-            return strikeoutAnnotation;
-        }
-        
-        public override AnnotationInfo AnnotateCells()
-        {
-            throw new NotSupportedException(String.Format(Message, annotationData.type));
-        }
-        
-        public override AnnotationInfo AnnotateSlides()
-        {
-            SetFixTop(true);
-            AnnotationInfo strikeoutAnnotation = InitAnnotationInfo();
-            strikeoutAnnotation.AnnotationPosition = new Point(annotationData.left, annotationData.top);
-            strikeoutAnnotation.PenColor = 0;
+            strikeoutAnnotation = InitAnnotationBase(strikeoutAnnotation) as StrikeoutAnnotation;
             return strikeoutAnnotation;
         }
 
-        public override AnnotationInfo AnnotateImage()
+        public override AnnotationBase AnnotatePdf()
         {
-            SetFixTop(false);
-            // init possible types of annotations
-            AnnotationInfo strikeoutAnnotation = InitAnnotationInfo();
+            strikeoutAnnotation = InitAnnotationBase(strikeoutAnnotation) as StrikeoutAnnotation;
+            this.strikeoutAnnotation.FontColor = 0;
             return strikeoutAnnotation;
         }
 
-        public override AnnotationInfo AnnotateDiagram()
+        public override AnnotationBase AnnotateCells()
         {
-            throw new NotSupportedException(String.Format(Message, annotationData.type));
+            throw new NotSupportedException(string.Format(Message, annotationData.type));
+        }
+
+        public override AnnotationBase AnnotateSlides()
+        {
+            return AnnotateWord();
+        }
+
+        public override AnnotationBase AnnotateImage()
+        {
+            return AnnotateWord();
+        }
+
+        public override AnnotationBase AnnotateDiagram()
+        {
+            throw new NotSupportedException(string.Format(Message, annotationData.type));
         }
 
         protected override AnnotationType GetType()

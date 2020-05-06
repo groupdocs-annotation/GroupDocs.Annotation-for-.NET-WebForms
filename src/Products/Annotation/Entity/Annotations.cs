@@ -3,16 +3,16 @@
     public class Annotations
     {
         internal string[] Cells = {
-            "text"
+            "textHighlight"
         };
         internal string[] Diagram = {
             "area",
-            "point",           
+            "point",
             "polyline",
-            "textField",                   
+            "textField",
             "arrow",
             "textRedaction",
-            "resourcesRedaction",           
+            "resourcesRedaction",
             "distance"
         };
         internal string[] Word = {
@@ -28,7 +28,7 @@
             "resourcesRedaction",
             "textUnderline",
             "distance",
-            "text"
+            "textHighlight"
         };
         internal string[] Pdf = {
             "area",
@@ -43,7 +43,7 @@
             "resourcesRedaction",
             "textUnderline",
             "distance",
-            "text"
+            "textHighlight"
         };
         internal string[] Image = {
             "area",
@@ -51,13 +51,13 @@
             "textStrikeout",
             "polyline",
             "textField",
-            "watermark",           
+            "watermark",
             "arrow",
             "textRedaction",
             "resourcesRedaction",
             "textUnderline",
             "distance",
-            "text"
+            "textHighlight"
         };
         internal string[] Slides = {
             "area",
@@ -65,12 +65,12 @@
             "textStrikeout",
             "polyline",
             "textField",
-            "watermark",         
+            "watermark",
             "arrow",
             "textRedaction",
             "resourcesRedaction",
-            "textUnderline",           
-            "text"
+            "textUnderline",
+            "textHighlight"
         };
     }
 }

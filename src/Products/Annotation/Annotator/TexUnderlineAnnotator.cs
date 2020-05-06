@@ -1,65 +1,58 @@
-﻿using GroupDocs.Annotation.Domain;
+﻿using GroupDocs.Annotation.Models;
+using GroupDocs.Annotation.Models.AnnotationModels;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web;
+using GroupDocs.Annotation.Options;
 using System;
 
 namespace GroupDocs.Annotation.WebForms.Products.Annotation.Annotator
 {
-    public class TexUnderlineAnnotator : AbstractSvgAnnotator
+    public class TexUnderlineAnnotator : AbstractTextAnnotator
     {
-        public TexUnderlineAnnotator(AnnotationDataEntity annotationData, PageData pageData)
-            : base(annotationData, pageData)
+        private UnderlineAnnotation underlineAnnotation;
+
+        public TexUnderlineAnnotator(AnnotationDataEntity annotationData, PageInfo pageInfo)
+            : base(annotationData, pageInfo)
         {
+            underlineAnnotation = new UnderlineAnnotation
+            {
+                Points = GetPoints(annotationData, pageInfo)
+            };
         }
-        
-        public override AnnotationInfo AnnotateWord()
+
+        public override AnnotationBase AnnotateWord()
         {
-            SetFixTop(true);
-            // init possible types of annotations
-            AnnotationInfo underlineAnnotation = InitAnnotationInfo();
-            // set line color
-            underlineAnnotation.PenColor = 1201033;
+            underlineAnnotation = InitAnnotationBase(underlineAnnotation) as UnderlineAnnotation;
+            underlineAnnotation.FontColor = 1201033;
             return underlineAnnotation;
         }
-        
-        public override AnnotationInfo AnnotatePdf()
+
+        public override AnnotationBase AnnotatePdf()
         {
-            SetFixTop(false);
-            AnnotationInfo underlineAnnotation = InitAnnotationInfo();
-            underlineAnnotation.Guid = annotationData.id.ToString();
-            underlineAnnotation.AnnotationPosition = new Point(annotationData.left, annotationData.top);
-            underlineAnnotation.PenColor = 1201033;
-            return underlineAnnotation;
+            return AnnotateWord();
         }
-        
-        public override AnnotationInfo AnnotateCells()
+
+        public override AnnotationBase AnnotateCells()
         {
             throw new NotSupportedException(String.Format(Message, annotationData.type));
         }
-        
-        public override AnnotationInfo AnnotateSlides()
+
+        public override AnnotationBase AnnotateSlides()
         {
-            SetFixTop(true);
-            AnnotationInfo underlineAnnotation = InitAnnotationInfo();
-            underlineAnnotation.PenColor = 0;
-            underlineAnnotation.AnnotationPosition = new Point(annotationData.left, annotationData.top);
+            underlineAnnotation = InitAnnotationBase(underlineAnnotation) as UnderlineAnnotation;
+            underlineAnnotation.FontColor = 0;
             return underlineAnnotation;
         }
-        
-        public override AnnotationInfo AnnotateImage()
+
+        public override AnnotationBase AnnotateImage()
         {
-            SetFixTop(false);
-            // init possible types of annotations
-            AnnotationInfo underlineAnnotation = InitAnnotationInfo();
-            // set line color
-            underlineAnnotation.PenColor = 1201033;
-            return underlineAnnotation;
+            return AnnotateWord();
         }
-        
-        public override AnnotationInfo AnnotateDiagram()
+
+        public override AnnotationBase AnnotateDiagram()
         {
-            throw new NotSupportedException(String.Format(Message, annotationData.type));
+            throw new NotSupportedException(string.Format(Message, annotationData.type));
         }
-        
+
         protected override AnnotationType GetType()
         {
             return AnnotationType.TextUnderline;

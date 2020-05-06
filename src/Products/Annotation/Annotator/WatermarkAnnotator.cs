@@ -1,57 +1,59 @@
-﻿using GroupDocs.Annotation.Domain;
+﻿using System;
+using GroupDocs.Annotation.Options;
+using GroupDocs.Annotation.Models.AnnotationModels;
+using GroupDocs.Annotation.Models;
 using GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web;
-using System;
 
 namespace GroupDocs.Annotation.WebForms.Products.Annotation.Annotator
 {
-    public class WatermarkAnnotator : AbstractTextAnnotator
+    public class WatermarkAnnotator : BaseAnnotator
     {
+        private WatermarkAnnotation watermarkAnnotation;
 
-        public WatermarkAnnotator(AnnotationDataEntity annotationData, PageData pageData)
-            : base(annotationData, pageData)
+        public WatermarkAnnotator(AnnotationDataEntity annotationData, PageInfo pageInfo)
+            : base(annotationData, pageInfo)
         {
-        }
-        
-        public override AnnotationInfo AnnotateWord()
-        {
-            // init possible types of annotations
-            AnnotationInfo watermarkAnnotation = InitAnnotationInfo();
-            watermarkAnnotation.AnnotationPosition = new Point(annotationData.left, annotationData.top);            
-            return watermarkAnnotation;
-        }
-
-        public override AnnotationInfo AnnotatePdf()
-        {
-            // init possible types of annotations
-            AnnotationInfo watermarkAnnotation = InitAnnotationInfo();
-            watermarkAnnotation.AnnotationPosition = new Point(annotationData.left, annotationData.top);
-            return watermarkAnnotation;
-        }
-        
-        public override AnnotationInfo AnnotateCells()
-        {
-            throw new NotSupportedException(String.Format(Message, annotationData.type));
+            watermarkAnnotation = new WatermarkAnnotation
+            {
+                Box = GetBox(),
+                FontFamily = !string.IsNullOrEmpty(annotationData.font) ? annotationData.font : "Arial",
+                FontColor = annotationData.fontColor,
+                FontSize = annotationData.fontSize == 0 ? 12 : annotationData.fontSize,
+                Text = annotationData.text
+            };
         }
 
-        public override AnnotationInfo AnnotateSlides()
+        public override AnnotationBase AnnotateWord()
         {
-            // init possible types of annotations
-            AnnotationInfo watermarkAnnotation = InitAnnotationInfo();
+            watermarkAnnotation = InitAnnotationBase(watermarkAnnotation) as WatermarkAnnotation;
             return watermarkAnnotation;
         }
-        
-        public override AnnotationInfo AnnotateImage()
+
+        public override AnnotationBase AnnotatePdf()
         {
-            // init possible types of annotations
-            AnnotationInfo watermarkAnnotation = InitAnnotationInfo();            
-            return watermarkAnnotation;
+            return AnnotateWord();
         }
-        
-        public override AnnotationInfo AnnotateDiagram()
+
+        public override AnnotationBase AnnotateCells()
         {
-            throw new NotSupportedException(String.Format(Message, annotationData.type));
+            throw new NotSupportedException(string.Format(Message, annotationData.type));
         }
-        
+
+        public override AnnotationBase AnnotateSlides()
+        {
+            return AnnotateWord();
+        }
+
+        public override AnnotationBase AnnotateImage()
+        {
+            return AnnotateWord();
+        }
+
+        public override AnnotationBase AnnotateDiagram()
+        {
+            throw new NotSupportedException(string.Format(Message, annotationData.type));
+        }
+
         protected override AnnotationType GetType()
         {
             return AnnotationType.Watermark;
