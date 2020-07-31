@@ -27,16 +27,8 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class AnnotationApiController : ApiController
     {
-        private static Common.Config.GlobalConfiguration GlobalConfiguration;
+        private static Common.Config.GlobalConfiguration GlobalConfiguration = new Common.Config.GlobalConfiguration();
         private readonly List<string> SupportedImageFormats = new List<string> { ".bmp", ".jpeg", ".jpg", ".tiff", ".tif", ".png", ".dwg", ".dcm", ".dxf" };
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public AnnotationApiController()
-        {
-            GlobalConfiguration = new Common.Config.GlobalConfiguration();
-        }
 
         /// <summary>
         /// Load Annotation configuration
