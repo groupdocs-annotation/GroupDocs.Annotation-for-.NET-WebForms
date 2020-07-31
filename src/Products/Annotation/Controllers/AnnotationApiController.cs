@@ -1,8 +1,14 @@
-﻿using GroupDocs.Annotation.WebForms.Products.Common.Config;
+﻿using GroupDocs.Annotation.Models;
+using GroupDocs.Annotation.Models.AnnotationModels;
+using GroupDocs.Annotation.Options;
+using GroupDocs.Annotation.WebForms.Products.Annotation.Annotator;
+using GroupDocs.Annotation.WebForms.Products.Annotation.Config;
+using GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web;
+using GroupDocs.Annotation.WebForms.Products.Annotation.Util;
+using GroupDocs.Annotation.WebForms.Products.Common.Config;
 using GroupDocs.Annotation.WebForms.Products.Common.Entity.Web;
 using GroupDocs.Annotation.WebForms.Products.Common.Resources;
 using GroupDocs.Annotation.WebForms.Products.Common.Util.Comparator;
-using GroupDocs.Annotation.Options;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,12 +18,6 @@ using System.Net.Http.Headers;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
-using GroupDocs.Annotation.WebForms.Products.Annotation.Entity.Web;
-using GroupDocs.Annotation.WebForms.Products.Annotation.Config;
-using GroupDocs.Annotation.Models.AnnotationModels;
-using GroupDocs.Annotation.WebForms.Products.Annotation.Util;
-using GroupDocs.Annotation.WebForms.Products.Annotation.Annotator;
-using GroupDocs.Annotation.Models;
 
 namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
 {
