@@ -11,15 +11,15 @@ namespace GroupDocs.Annotation.WebForms
         void Application_Start(object sender, EventArgs e)
         {
             // Fix required to use several GroupDocs products in one project.
-            // Set GroupDocs products assemblies names           
+            // Set GroupDocs products assemblies names
             string annotationAssemblyName = "GroupDocs.Annotation.dll";
             // set GroupDocs.Annotation license
-            DomainGenerator annotationDomainGenerator = new DomainGenerator(annotationAssemblyName, "GroupDocs.Annotation.Common.License.License");
+            DomainGenerator annotationDomainGenerator = new DomainGenerator(annotationAssemblyName, "GroupDocs.Annotation.License");
             annotationDomainGenerator.SetAnnotationLicense();
 
             // Code that runs on application startup
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
 }

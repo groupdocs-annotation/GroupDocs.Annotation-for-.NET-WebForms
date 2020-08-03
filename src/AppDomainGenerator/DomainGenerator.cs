@@ -58,18 +58,18 @@ namespace GroupDocs.Annotation.WebForms.AppDomainGenerator
             // Initiate class from the loaded assembly
             Type type = assembly.GetType(className);
             return type;
-        }      
+        }
 
         /// <summary>
         /// Set GroupDocs.Annotation license
-        /// </summary>       
+        /// </summary>
         public void SetAnnotationLicense()
         {
             // Initiate license class
-            var obj = (GroupDocs.Annotation.Common.License.License)Activator.CreateInstance(CurrentType);
+            var obj = (GroupDocs.Annotation.License)Activator.CreateInstance(CurrentType);
             // Set license
             SetLicense(obj);
-        }        
+        }
 
         private void SetLicense(dynamic obj)
         {

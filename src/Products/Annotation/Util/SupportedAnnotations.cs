@@ -5,7 +5,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Util
     public class SupportedAnnotations
     {
         public string[] GetSupportedAnnotations(string documentType)
-        {           
+        {
             Annotations annotations = new Annotations();
             switch (documentType)
             {
@@ -27,8 +27,8 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Util
                 case "diagram":
                     return annotations.Diagram;
                 default:
-                    return annotations.Pdf;              
-            }           
+                    return annotations.Pdf;
+            }
         }
     }
 }
