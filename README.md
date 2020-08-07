@@ -170,12 +170,4 @@ Please have a look at the LICENSE.md for more details
 - .NET MVC [Document & PDF annotator](https://github.com/groupdocs-annotation/GroupDocs.Annotation-for-.NET-MVC)
 
 
-## Resources
-- **Website:** [www.groupdocs.com](http://www.groupdocs.com)
-- **Product Home:** [GroupDocs.Annotation for .NET](https://products.groupdocs.com/annotation/NET)
-- **Product API References:** [GroupDocs.Annotation for .NET API](https://apireference.groupdocs.com)
-- **Download:** [Download GroupDocs.Annotation for .NET](http://downloads.groupdocs.com/annotation/NET)
-- **Documentation:** [GroupDocs.Annotation for .NET Documentation](https://docs.groupdocs.com/dashboard.action)
-- **Free Support Forum:** [GroupDocs.Annotation for .NET Free Support Forum](https://forum.groupdocs.com/c/annotation)
-- **Paid Support Helpdesk:** [GroupDocs.Annotation for .NET Paid Support Helpdesk](https://helpdesk.groupdocs.com)
-- **Blog:** [GroupDocs.Annotation for .NET Blog](https://blog.groupdocs.com/category/groupdocs-annotation-product-family)
+[Home](https://www.groupdocs.com/) | [Product Page](https://products.groupdocs.com/annotation/net) | [Documentation](https://docs.groupdocs.com/display/annotationnet/Home) | [API Reference](https://apireference.groupdocs.com/net/annotation) | [Examples](https://github.com/groupdocs-annotation/GroupDocs.Annotation-for-.NET) | [Blog](https://blog.groupdocs.com/category/annotation/) | [Free Support](https://forum.groupdocs.com/c/annotation) | [Temporary License](https://purchase.groupdocs.com/temporary-license)
