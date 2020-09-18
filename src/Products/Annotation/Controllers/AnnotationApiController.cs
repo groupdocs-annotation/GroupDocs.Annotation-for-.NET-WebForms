@@ -138,7 +138,17 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Controllers
                 AnnotationBase[] annotations = annotator.Get().ToArray();
 
                 description.guid = loadDocumentRequest.guid;
-                string documentType = SupportedImageFormats.Contains(info.FileType.Extension) ? "image" : info.FileType.ToString();
+
+                string documentType = string.Empty;
+                if (info.FileType != null)
+                {
+                    documentType = SupportedImageFormats.Contains(info.FileType.Extension) ? "image" : info.FileType.ToString();
+                }
+                else
+                {
+                    documentType = "Portable Document Format";
+                }
+
                 description.supportedAnnotations = new SupportedAnnotations().GetSupportedAnnotations(documentType);
 
                 List<string> pagesContent = new List<string>();
