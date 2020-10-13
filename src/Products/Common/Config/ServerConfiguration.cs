@@ -10,14 +10,16 @@ namespace GroupDocs.Annotation.WebForms.Products.Common.Config
     /// </summary>
     public class ServerConfiguration : ConfigurationSection
     {
-        public int HttpPort = 8080;
-        public string HostAddress = "localhost";
-        private readonly NameValueCollection serverConfiguration = (NameValueCollection)System.Configuration.ConfigurationManager.GetSection("serverConfiguration");
+        private readonly NameValueCollection serverConfiguration = (NameValueCollection)ConfigurationManager.GetSection("serverConfiguration");
+
+        public int HttpPort { get; set; } = 8080;
+        public string HostAddress { get; set; } = "localhost";
 
         /// <summary>
         /// Get server configuration section of the web.config
         /// </summary>
-        public ServerConfiguration() {
+        public ServerConfiguration()
+        {
             YamlParser parser = new YamlParser();
             dynamic configuration = parser.GetConfiguration("server");
             ConfigurationValuesGetter valuesGetter = new ConfigurationValuesGetter(configuration);

@@ -5,7 +5,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Util.Directory
 {
     public class DirectoryUtils
     {
-        public FilesDirectoryUtils FilesDirectory;       
+        public FilesDirectoryUtils FilesDirectory { get; set; }
 
         /// <summary>
         /// Constructor

@@ -52,7 +52,7 @@ namespace GroupDocs.Annotation.WebForms.AppDomainGenerator
         {
             // Create domain
             AppDomain dom = AppDomain.CreateDomain(domainName);
-            AssemblyName assemblyName = new AssemblyName() { CodeBase = assemblyPath };
+            AssemblyName assemblyName = new AssemblyName { CodeBase = assemblyPath };
             // Load assembly into the domain
             Assembly assembly = dom.Load(assemblyName);
             // Initiate class from the loaded assembly

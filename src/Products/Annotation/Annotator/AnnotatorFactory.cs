@@ -5,7 +5,7 @@ using System;
 
 namespace GroupDocs.Annotation.WebForms.Products.Annotation.Annotator
 {
-    public class AnnotatorFactory
+    public static class AnnotatorFactory
     {
         /// <summary>
         /// Create annotator instance depending on type of annotation

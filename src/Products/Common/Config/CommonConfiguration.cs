@@ -31,7 +31,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Common.Config
 
         public bool enableRightClick { get; set; }
 
-        private NameValueCollection commonConfiguration = (NameValueCollection)System.Configuration.ConfigurationManager.GetSection("commonConfiguration");
+        private readonly NameValueCollection commonConfiguration = (NameValueCollection)ConfigurationManager.GetSection("commonConfiguration");
 
         /// <summary>
         /// Constructor

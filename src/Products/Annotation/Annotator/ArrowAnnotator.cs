@@ -9,7 +9,7 @@ namespace GroupDocs.Annotation.WebForms.Products.Annotation.Annotator
 {
     public class ArrowAnnotator : BaseAnnotator
     {
-        private bool withGuid = false;
+        private bool withGuid;
         private ArrowAnnotation arrowAnnotation;
 
         public ArrowAnnotator(AnnotationDataEntity annotationData, PageInfo pageInfo)
